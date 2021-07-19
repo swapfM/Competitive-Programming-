@@ -2,11 +2,12 @@
 #include<bits/stdc++.h> 
 using namespace std;
  int main(){
-
      int t;
      cin>>t;
 
      while(t--){
+      ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
          int n,ans=0;
          cin>>n;
@@ -25,7 +26,6 @@ using namespace std;
                   temp+= pow(10,i);
                  
                  }
-
 
                 if(temp*n <= t)
                     cout<<ans+n<<"\n";
