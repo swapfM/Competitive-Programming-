@@ -24,4 +24,17 @@ int mod = 998244353;
 			else if(a[i]==1)
 			{
 				
-		
+				if(r<g)r++;
+				else g++;
+				
+				}
+			
+			}
+			
+			if(r==g)cout<<r<<"\n";
+			else cout<<min(r,g)<<"\n";
+	
+	
+	return;
+	
+ }
