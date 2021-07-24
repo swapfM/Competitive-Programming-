@@ -40,5 +40,13 @@ int mod = 998244353;
  }
  
 	
+int main(){
 	
+	int t;
+	 cin>>t;
+	while(t--){
+	
+		solve();
+	
+	}}
 
