@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -34,4 +33,27 @@ int main(){
                     temparray.push_back(vrr[i][j]);
                 }
                 
-      
+            }
+        }
+        int siz =temparray.size() - temparray.size()%k;
+        int curr=1;
+        for (int i = 0; i < siz; i++)
+        {
+            if(curr>k){
+                curr=1;
+            }
+            ans[temparray[i]] = curr;
+            curr++;
+        }
+        
+        for (auto x : ans)
+        {
+            cout<<x<<" ";
+        }cout<<endl;
+        
+            
+        
+    }
+
+    return  0;
+}
