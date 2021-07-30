@@ -1,5 +1,9 @@
 
  
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int mod = 998244353;
  
  void solve(){
 	
@@ -39,8 +43,7 @@
  }
 
 	
-	
-		int main()
+int main()
 {
 	 ios_base::sync_with_stdio(false);
     cin.tie(NULL);
