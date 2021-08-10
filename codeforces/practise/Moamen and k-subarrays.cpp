@@ -24,3 +24,24 @@ void solve()
 	cout<<"YES\n";
  
 }	
+
+int main()
+{
+
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+#endif
+ 
+	fast_io;
+	
+	ll testcase;
+	cin>>testcase;
+	while(testcase--)
+		solve();
+	
+	
+ 
+ 
+ 
+	return 0;
+}
