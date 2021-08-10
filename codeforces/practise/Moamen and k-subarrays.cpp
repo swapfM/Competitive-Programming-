@@ -34,9 +34,9 @@ int main()
  
 	fast_io;
 	
-	ll testcase;
-	cin>>testcase;
-	while(testcase--)
+	int t;
+	cin>>t;
+	while(t--)
 		solve();
 	
 	
