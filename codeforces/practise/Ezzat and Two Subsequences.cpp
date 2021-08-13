@@ -1,21 +1,26 @@
 
-#include<bits/stdc++.h>
-using namespace std;
-typedef long double ll;
 
-int main()
-{
-	ll t;
-	cin>>t;
-	while(t--)
-	{
-		int n;
-		cin>>n;
-		int ar[n];
-		ll sum=0;
-		for(int i=0;i<n;i++)
-		cin>>ar[i],sum+=ar[i];
-		sort(ar,ar+n);
-		cout<<fixed<<setprecision(10)<<(sum-ar[n-1])/(n-1)+ar[n-1]<<"\n";
+void solve() {
+
+	int n;
+	cin >> n;
+
+	ll s = 0, a, m = -9999999999;
+
+	rep(i, n) {
+		cin >> a;
+		s += a;
+		m = max(m, a);
+
 	}
+	double ans = m + (double)(s - m) / (n - 1);
+	cout << setprecision(16) << ans << "\n";
+	return;
+
+
+
+
 }
+
+
+
