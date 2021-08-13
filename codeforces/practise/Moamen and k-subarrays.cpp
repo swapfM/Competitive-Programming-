@@ -1,49 +1,26 @@
-#include<bits/stdc++.h>
-using namespace std;
 
-void solve()
-{
-	ll n, k; cin>>n>>k;
-	vector<ll> v(n);
-	map<ll, ll> mp;
-	for(int i=0; i<n; i++){
-		cin>>v[i];  
-	}
-	vector<ll> c=v;
-	sortall(c);
-	for(int i=0; i<n; i++){
-		mp[c[i]]=i; 
-	}
-	k--;
-	for(int i=1; i<n; i++){
-		if(mp[v[i]]-mp[v[i-1]]!=1){
-			if(k>0){k--;}
-			else{
-				cout<<"NO\n"; return;
-			}
-		}
-	}
-	cout<<"YES\n";
- 
-}	
 
-int main()
-{
 
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-#endif
- 
-	fast_io;
-	
-	int t;
-	cin>>t;
-	while(t--)
-		solve();
-	
-	
- 
- 
- 
-	return 0;
+void solve() {
+
+	int n, k;
+	cin >> n >> k;
+	unordered_map<int, int>mp;
+	vector<int>v(n);
+
+	rep(i, n)cin >> v[i], mp[v[i]] = i;
+	int ans = 1;
+
+	sort(v.begin(), v.end());
+
+	REP(i, 1, n - 1) {
+
+		mp[v[i]] - mp[v[i - 1]] != 1 ? ans++ : 1;
+	}
+
+	ans <= k ? cout << "YES\n" : cout << "NO\n";
+
+	return;
+
+
 }
