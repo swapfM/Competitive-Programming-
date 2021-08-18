@@ -17,8 +17,7 @@ void solve() {
 	ll rem = n - s;
 
 
-	if (rem <= r)cout << rem << " " << r << "\n";
-	else cout << r << " " << 2 * r - rem << "\n";
+	
 	return;
 
 
