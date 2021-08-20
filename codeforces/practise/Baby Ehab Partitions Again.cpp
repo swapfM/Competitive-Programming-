@@ -1,5 +1,34 @@
 
 
+bool find(int n, int sum, vector<int>&arr ) {
+
+
+	bool part[n + 1][sum / 2 + 1];
+	int i, j;
+
+	for (i = 0; i <= sum / 2; i++)
+		part[0][i] = false;
+
+
+	for (i = 0; i <= n; i++)
+		part[i][0] = true;
+
+
+	for (i = 1; i <= n; i++)
+	{
+		for (j = 1; j <= sum / 2; j++)
+		{
+			part[i][j] = part[i - 1][j];
+			if (j >= arr[i - 1])
+				part[i][j] = part[i][j] ||
+				             part[i - 1][j - arr[i - 1]];
+
+		}
+	}
+	return part[n][sum / 2];
+}
+
+
 
 void solve() {
 
@@ -52,7 +81,4 @@ void solve() {
 
 
 }
-
-
-
 
