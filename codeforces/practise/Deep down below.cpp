@@ -13,42 +13,50 @@ void solve() {
 
 	int n;
 	cin >> n;
-	
-		vector<int>v[n];
 
-		vector<pair<int,int>>m;
-		
+	vector<int>v[n];
 
-		rep(i,n){
+	vector<pair<int, int>>m;
 
-			int cc,a,mx=0;
-			cin>>cc;
-			rep(j,cc){
 
-				cin>>a;
+	rep(i, n) {
 
-				a-=i+1;
-				mx = max(a,mx);
+		int cc, a, mx = 0;
+		cin >> cc;
+		rep(j, cc) {
 
-				v[i].push_back(a);
+			cin >> a;
 
-			}
+			a -= j;
+			mx = max(a, mx);
 
-			m.push_back(make_pair(mx,cc));
+			v[i].push_back(a);
+
 		}
 
-		sort(m.begin(),m.end());
+		m.push_back(make_pair(mx, cc));
+	}
 
-		int ans = 0;
+	sort(m.begin(), m.end());
 
-		
-
-
+	int ans = m[n - 1].first + 1;
 
 
-	
+	for (int i = n - 2; i >= 0; i--) {
 
+		ans -= m[i].second;
+
+		int tt = m[i].first;
+
+		if (ans <= tt)ans = tt + 1 ;
+
+
+	}
+
+	cout << ans << "\n";
 }
+
+
 
 
 
